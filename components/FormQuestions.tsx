@@ -78,7 +78,7 @@ export const FormQuestions = ({title, disabled, index, subtitle, questions,quest
           {questions.map((question,index) => <FormChoice key={index} index={index.toString()} question={question}/>)}
           
           {showDetails && <AdditionalDetails title={title} detailsValue={additionalDetails}  changeDetails={onChangeDetailsHandler} />}
-          {showReport && <SkillReport skillsValue={skillReport} changeReport={onChangeReportHandler} disabled={disabled}/>}
+          {showReport && <SkillReport report={'Test for report.'} disabled={disabled}/>}
         </QuestionsForm>
       </div>
     </Container>

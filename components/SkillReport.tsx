@@ -32,7 +32,7 @@ import styled from "@emotion/styled";
   font-weight: bold;
 `;
 
-const DisabledTextArea = styled.div`
+const SkillReportDisabledArea = styled.div`
   display: flex;
   color: gray;
   justify-content: center;
@@ -44,13 +44,22 @@ const DisabledTextArea = styled.div`
   font-size: 13px;
   font-weight: 500;
 `
+const SkillReportArea = styled.div`
+  display: flex;
+  color: black;
+  margin-top: 10px;
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
+`
 interface Props {
-  skillsValue: string,
-  changeReport: (e:any) => void,
   disabled: boolean
+  report: string
 
 }
-const SkillReport = ({skillsValue,changeReport, disabled}: Props) => {
+const SkillReport = ({disabled, report}: Props) => {
   return (
     <Container>
       <H3>Skills report notes preview.</H3>
@@ -62,8 +71,8 @@ const SkillReport = ({skillsValue,changeReport, disabled}: Props) => {
           the pre-filled notes.
         </P>
       </SideNoteContainer>
-      {disabled ? <DisabledTextArea>
-        <p>No notes will be generated for this section.</p></DisabledTextArea> : <TextArea value={skillsValue} onChange={(e) => changeReport(e)}/>}
+      {disabled ? <SkillReportDisabledArea>
+        <p>No notes will be generated for this section.</p></SkillReportDisabledArea> : <SkillReportArea >{report}</SkillReportArea>}
       
     </Container>
   );

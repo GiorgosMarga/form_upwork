@@ -54,8 +54,7 @@ const ButtonContainer = styled.div`
 interface Answers {
   [index: string]: {
     answer?: string,
-    details?: string,
-    skillReport?: string
+    details?: string
   }
 }
 
