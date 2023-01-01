@@ -26,7 +26,7 @@ const FormChoice = ({index, question}: Props) => {
   return (
     <Choice>
       <Input type="radio" id={index} name={'question'} value={index}/>
-      <Label for={index}>
+      <Label >
         {question}
       </Label>
     </Choice>

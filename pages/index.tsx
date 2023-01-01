@@ -22,11 +22,18 @@ const Button = styled.button`
   
   background-color: purple;
   border-radius: 20px;
-  font-size: 18px;
+  font-size: 12px;
   color: white;
-  padding: 10px;
+  padding-left: 13px;
+  padding-right: 13px;
   border: none;
   cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  &:hover{
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+  }
 `
 
 const ButtonContainer = styled.div`
@@ -41,10 +48,6 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: end;
 `
-
-interface Props {
-  questions: any
-}
 
 
 

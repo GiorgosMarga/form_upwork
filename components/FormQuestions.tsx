@@ -24,7 +24,7 @@ const QuestionSubTitle = styled.p`
   margin-top: 3px;
 `;
 
-const QuestionsForm = styled.form`
+const QuestionsForm = styled.div`
   display: flex;
   flex-direction: column;
 `;
