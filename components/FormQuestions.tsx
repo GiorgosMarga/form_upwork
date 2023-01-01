@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react'
+import {useState} from 'react'
 import styled from "@emotion/styled";
 import Header from "./Header";
 import React from "react";
@@ -43,26 +43,15 @@ interface Props {
 }
 export const FormQuestions = ({title, disabled, index, subtitle, questions,question , setAnswer, onChangeValue, showDetails, showReport}: Props) => {
   const [additionalDetails,setAdditionalDetails] = useState("")
-  const [skillReport,setSkillReport] = useState("")
   
 
   const onChangeDetailsHandler = (e:any) => {
       e.stopPropagation();
       setAnswer((prevState: { [x: string]: any; }) => {
-        console.log(e.target.value)
         let newObject = Object.assign({},{...prevState[index.toString()],details:e.target.value });
-        
         return {...prevState, [index]: newObject}
        })
       setAdditionalDetails(e.target.value)
-  }
-  const onChangeReportHandler = (e:any) => {
-    e.stopPropagation();
-    setAnswer((prevState: { [x: string]: any; }) => {
-      let newObject =  Object.assign({},{ ...prevState[index.toString()],skillsReport: e.target.value});
-      return {...prevState, [index]: newObject}
-     })
-    setSkillReport(e.target.value)
   }
   return (
     <Container>
@@ -74,7 +63,7 @@ export const FormQuestions = ({title, disabled, index, subtitle, questions,quest
         <QuestionSubTitle>
           {subtitle}
         </QuestionSubTitle>
-        <QuestionsForm  onChange={(e) => onChangeValue(index,e.target.value)}>
+        <QuestionsForm  onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeValue(index,e.target.value)}>
           {questions.map((question,indexQuestion) => <FormChoice key={indexQuestion} value={indexQuestion.toString()} index={index.toString()} question={question}/>)}
           
           {showDetails && <AdditionalDetails title={title} detailsValue={additionalDetails}  changeDetails={onChangeDetailsHandler} />}
