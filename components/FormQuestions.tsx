@@ -75,7 +75,7 @@ export const FormQuestions = ({title, disabled, index, subtitle, questions,quest
           {subtitle}
         </QuestionSubTitle>
         <QuestionsForm  onChange={(e) => onChangeValue(index,e.target.value)}>
-          {questions.map((question,index) => <FormChoice key={index} index={index.toString()} question={question}/>)}
+          {questions.map((question,indexQuestion) => <FormChoice key={indexQuestion} value={indexQuestion.toString()} index={index.toString()} question={question}/>)}
           
           {showDetails && <AdditionalDetails title={title} detailsValue={additionalDetails}  changeDetails={onChangeDetailsHandler} />}
           {showReport && <SkillReport report={'Test for report.'} disabled={disabled}/>}

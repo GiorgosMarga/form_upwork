@@ -93,7 +93,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        {formQuestion?.map((question: any, index: number) => <FormQuestions key={index} index={index} questions={question.questions} question={question.question ? question.question : null} title={question.title} disabled={question.disabled ? true : false} subtitle={question.subtitle} setAnswer={setAnswers} onChangeValue={onChangeValueHandler}
+        {formQuestion?.map((question: any) => <FormQuestions key={question.key} index={question.key} questions={question.questions} question={question.question ? question.question : null} title={question.title} disabled={question.disabled ? true : false} subtitle={question.subtitle} setAnswer={setAnswers} onChangeValue={onChangeValueHandler}
         showReport={question.showReport}
         showDetails={question.showDetails}
         />)}

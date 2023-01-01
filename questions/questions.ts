@@ -1,4 +1,5 @@
 interface Question {
+  key: number;
   title: string;
   question?: string;
   subtitle?: string;
@@ -9,6 +10,7 @@ interface Question {
 }
 export const formQuestion: Question[] = [
   {
+    key: 1,
     title: "PERFORMANCE OPTIMIZATION QUESTION",
     subtitle: `Potential performance optimizations include infinite scrolling,
        loading thumbnails, recycler-views, caching`,
@@ -25,6 +27,7 @@ export const formQuestion: Question[] = [
     showReport: true,
   },
   {
+    key: 2,
     title: "TRANSITION QUESTION",
     subtitle:
       "Example detailed response: Slides to left or expands (the transition should indicate that the user is progressing thought the app); 200-300 ms (slow enough for eye, but fast enough to be zippy);",
@@ -42,6 +45,7 @@ export const formQuestion: Question[] = [
     disabled: true,
   },
   {
+    key: 3,
     title: "ACCESSIBILITY QUESTION",
     subtitle:
       "Potential features include localization, voice support, font size changes",
@@ -58,6 +62,7 @@ export const formQuestion: Question[] = [
     showReport: true,
   },
   {
+    key: 4,
     title: "SORT CRITERIA QUESTION",
     subtitle:
       "User centered sort criteria include: price, distance, rating, brand of charging station, recently used,favorites, etc.",
@@ -74,6 +79,7 @@ export const formQuestion: Question[] = [
     showReport: true,
   },
   {
+    key: 5,
     title: "FLAKY INTERNET QUESTION",
     subtitle:
       "Potential solutions include: if request fails, define retry strategy; autotimeout; displaying on screen when connection lost; offline-mode support",
@@ -90,6 +96,7 @@ export const formQuestion: Question[] = [
     showReport: true,
   },
   {
+    key: 6,
     title: "CONCLUSION",
     question:
       "Which of the following best describe the candidate's considerations of the pros and cons of the options?",
@@ -107,6 +114,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 7,
     title: "",
     question:
       "Which of the following best describe the technical analysis in the candidate's conclusion?",
@@ -127,6 +135,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 8,
     title: "",
     question:
       "Which of the following best describes the candidate's discussion of the impact their choice (or the choices) would have the user?",
@@ -147,6 +156,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 9,
     title: "",
     question:
       "Which of the following best describes the structure of the candidate's argument in the conclusion?",
@@ -164,6 +174,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 10,
     title: "",
     question:
       "Please write 1-3 sentences describing the candidate's conclusion. What went well? What didn't go well?",
@@ -173,6 +184,7 @@ export const formQuestion: Question[] = [
     showReport: true,
   },
   {
+    key: 11,
     title: "OVERALL FEEDBACK",
     question:
       "Did the candidate seek clarification or ask questions about any portion of the design?",
@@ -189,6 +201,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 12,
     title: "",
     question:
       "Did the candidate propose any new ideas in any of their responses or comments",
@@ -207,6 +220,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 13,
     title: "",
     question:
       "Which of the following best describes the overall Writing Clarity of the candidate's responses?",
@@ -222,6 +236,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 14,
     title: "",
     question:
       "Which of the following best describes the overall approach to Collaboration that the candidate demonstrated in the course of their comments and responses?",
@@ -239,6 +254,7 @@ export const formQuestion: Question[] = [
     showReport: true,
   },
   {
+    key: 15,
     title: "INTERNAL GRADING NOTES",
     question: "Based on this module, should this candidate come onsite?",
     subtitle: ``,
@@ -254,6 +270,7 @@ export const formQuestion: Question[] = [
     showReport: true,
   },
   {
+    key: 16,
     title: "",
     question:
       "Move Forward for a SWE Internship or Entry Level SWE (<1 year of experience)",
@@ -263,6 +280,7 @@ export const formQuestion: Question[] = [
     showReport: false,
   },
   {
+    key: 17,
     title: "",
     question:
       "Move Forward for an Above Entry Level SWE(1+ year of experience)",

@@ -21,11 +21,12 @@ export const Label = styled.label`
 interface Props {
   index: string;
   question:string;
+  value: string;
 }
-const FormChoice = ({index, question}: Props) => {
+const FormChoice = ({index, question, value}: Props) => {
   return (
     <Choice>
-      <Input type="radio" id={index} name={'question'} value={index}/>
+      <Input type="radio" id={index} name={index} value={value}/>
       <Label >
         {question}
       </Label>
