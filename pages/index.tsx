@@ -82,7 +82,6 @@ export default function Home() {
       return {...prevState, [index]: newObject}
      })
    }
-
   
   return mounted ? (
     <>
@@ -93,9 +92,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main>
-        {formQuestion?.map((question: any) => <FormQuestions key={question.key} index={question.key} questions={question.questions} question={question.question ? question.question : null} title={question.title} disabled={question.disabled ? true : false} subtitle={question.subtitle} setAnswer={setAnswers} onChangeValue={onChangeValueHandler}
-        showReport={question.showReport}
-        showDetails={question.showDetails}
+        {formQuestion?.map((question: any, index:number) => 
+        <FormQuestions 
+          key={question.key} 
+          index={question.key} 
+          questions={question.questions} 
+          question={question.question ? question.question : null} 
+          title={question.title} 
+          disabled={question.disabled ? true : false} 
+          subtitle={question.subtitle} 
+          setAnswer={setAnswers} 
+          onChangeValue={onChangeValueHandler}
+          showReport={question.showReport}
+          showDetails={question.showDetails}
         />)}
         <ButtonContainer>
           <Button onClick={onClickHandler}>Preview</Button>

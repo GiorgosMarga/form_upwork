@@ -5,7 +5,7 @@ import React from "react";
 import FormChoice from "./FormChoice";
 import AdditionalDetails from "./AdditionalDetails";
 import SkillReport from "./SkillReport";
-
+import { reports } from '../questions/reports';
 
 const Container = styled.div`
   display: flex;
@@ -43,8 +43,7 @@ interface Props {
 }
 export const FormQuestions = ({title, disabled, index, subtitle, questions,question , setAnswer, onChangeValue, showDetails, showReport}: Props) => {
   const [additionalDetails,setAdditionalDetails] = useState("")
-  
-
+  const [chosenValue, setChosenValue] = useState(-1)
   const onChangeDetailsHandler = (e:any) => {
       e.stopPropagation();
       setAnswer((prevState: { [x: string]: any; }) => {
@@ -64,10 +63,10 @@ export const FormQuestions = ({title, disabled, index, subtitle, questions,quest
           {subtitle}
         </QuestionSubTitle>
         <QuestionsForm  onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeValue(index,e.target.value)}>
-          {questions.map((question,indexQuestion) => <FormChoice key={indexQuestion} value={indexQuestion.toString()} index={index.toString()} question={question}/>)}
+          {questions.map((question,indexQuestion) => <FormChoice setChosenValue={setChosenValue} key={indexQuestion} value={indexQuestion.toString()} index={index.toString()} question={question}/>)}
           
           {showDetails && <AdditionalDetails title={title} detailsValue={additionalDetails}  changeDetails={onChangeDetailsHandler} />}
-          {showReport && <SkillReport report={'Test for report.'} disabled={disabled}/>}
+          {showReport && <SkillReport report={chosenValue !== -1 ? reports[index-1].sentences[chosenValue] + additionalDetails: ""} disabled={disabled}/>}
         </QuestionsForm>
       </div>
     </Container>

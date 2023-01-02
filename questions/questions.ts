@@ -7,6 +7,7 @@ interface Question {
   showDetails?: boolean;
   showReport?: boolean;
   disabled?: boolean;
+  report?: string;
 }
 export const formQuestion: Question[] = [
   {
@@ -77,6 +78,8 @@ export const formQuestion: Question[] = [
     ],
     showDetails: true,
     showReport: true,
+    report:
+      "Overall, the candidate performed a strong tradeoff analysis. Their response handled the related technical concerns with clear expertise. They considered the impact their decision would have on the user. In general, this was a coherent argument. The candidate showed more interest to explain their choice, than in the other questions. In their argument, they stated that sorting on client side could lead to running out of memory, so they chose option B, server-side sorting. After that, they listed a lot of pros (more than the document contained), provided some explanation for each, furthermore they provided a few improvement ideas how the team could cope with the given difficulties. In summary, the candidate's answer was a well stated, good argument.",
   },
   {
     key: 5,
@@ -181,7 +184,7 @@ export const formQuestion: Question[] = [
     subtitle: "",
     questions: [],
     showDetails: true,
-    showReport: true,
+    showReport: false,
   },
   {
     key: 11,

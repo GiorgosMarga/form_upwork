@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import styled from "@emotion/styled";
 
@@ -52,7 +53,9 @@ const SkillReportArea = styled.div`
   padding: 10px;
   border-radius: 5px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 550;
+  min-height: 30px;
+  width: 98%;
 `
 interface Props {
   disabled: boolean

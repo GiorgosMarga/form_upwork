@@ -22,11 +22,12 @@ interface Props {
   index: string;
   question:string;
   value: string;
+  setChosenValue: (value: number) => any
 }
-const FormChoice = ({index, question, value}: Props) => {
+const FormChoice = ({index, question, value, setChosenValue}: Props) => {
   return (
     <Choice>
-      <Input type="radio" id={index} name={index} value={value}/>
+      <Input type="radio" id={index} name={index} value={value} onClick={() => setChosenValue(parseInt(value))}/>
       <Label >
         {question}
       </Label>
