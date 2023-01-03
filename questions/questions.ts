@@ -43,7 +43,7 @@ export const formQuestion: Question[] = [
     ],
     showDetails: true,
     showReport: true,
-    disabled: true,
+    disabled: false,
   },
   {
     key: 3,

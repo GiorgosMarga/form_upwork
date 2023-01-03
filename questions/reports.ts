@@ -28,6 +28,17 @@ export const reports: Report = {
   },
   2: {
     sentences: [
+      "The candidate demonstrated some clear transition expertise.",
+      "The candidate demonstrated a really good transition expertise.",
+      "The candidate demonstrated a good transition expertise.",
+      "The candidate demonstrated a mediocre transition expertise.",
+      "The candidate demonstrated a poor transition expertise.",
+      "The candidate demonstrated a really poor transition expertise.",
+      "The candidate didn't give an answer.",
+    ],
+  },
+  3: {
+    sentences: [
       "The candidate demonstrated some clear accessibility expertise.",
       "The candidate demonstrated a really good accessibility expertise.",
       "The candidate demonstrated a good accessibility expertise.",
@@ -37,7 +48,7 @@ export const reports: Report = {
       "The candidate didn't give an answer.",
     ],
   },
-  3: {
+  4: {
     sentences: [
       "The candidate demonstrated some clear sort criteria expertise.",
       "The candidate demonstrated a really good sort criteria expertise.",
@@ -48,7 +59,7 @@ export const reports: Report = {
       "The candidate didn't give an answer.",
     ],
   },
-  4: {
+  5: {
     sentences: [
       "The candidate demonstrated some clear network expertise.",
       "The candidate demonstrated a really good network expertise.",
@@ -59,7 +70,7 @@ export const reports: Report = {
       "The candidate didn't give an answer.",
     ],
   },
-  5: {
+  6: {
     sentences: [
       "The candidate demonstrated some clear network expertise.",
       "The candidate demonstrated a really good network expertise.",
