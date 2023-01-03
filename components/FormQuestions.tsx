@@ -40,9 +40,11 @@ interface Props {
   showDetails:   boolean;
   setAnswer: (prevState: any) => any
   onChangeValue: (index: number, value: string) => void
+  answers: any
 }
-export const FormQuestions = ({title, disabled, index, subtitle, questions,question , setAnswer, onChangeValue, showDetails, showReport}: Props) => {
+export const FormQuestions = ({title, disabled, index, subtitle, questions,question , setAnswer, onChangeValue, showDetails, showReport, answers}: Props) => {
   const [additionalDetails,setAdditionalDetails] = useState("")
+  const [skillsReport,setSkillsReport] = useState("")
   const [chosenValue, setChosenValue] = useState(-1)
   const onChangeDetailsHandler = (e:any) => {
       e.stopPropagation();
@@ -51,6 +53,16 @@ export const FormQuestions = ({title, disabled, index, subtitle, questions,quest
         return {...prevState, [index]: newObject}
        })
       setAdditionalDetails(e.target.value)
+  }
+  const generateReport = (index: number) => {
+    console.log(index)
+    if(index === 13){
+      const value10 = reports[10].sentences[answers[11]?.answer] ?? ""
+      const value11 = reports[11].sentences[answers[12]?.answer] ?? ""
+      const value12 = reports[12].sentences[answers[13]?.answer] ?? ""
+      return value10 + value11 + value12 + reports[index].sentences[chosenValue]  
+    }
+    return reports[index].sentences[chosenValue]
   }
   return (
     <Container>
@@ -66,7 +78,7 @@ export const FormQuestions = ({title, disabled, index, subtitle, questions,quest
           {questions.map((question,indexQuestion) => <FormChoice setChosenValue={setChosenValue} key={indexQuestion} value={indexQuestion.toString()} index={index.toString()} question={question}/>)}
           
           {showDetails && <AdditionalDetails title={title} detailsValue={additionalDetails}  changeDetails={onChangeDetailsHandler} />}
-          {showReport && <SkillReport report={chosenValue !== -1 ? reports[index-1].sentences[chosenValue] + additionalDetails: ""} disabled={disabled}/>}
+          {showReport && <SkillReport report={chosenValue !== -1 ? generateReport(index-1)  + additionalDetails: ""} disabled={disabled}/>}
         </QuestionsForm>
       </div>
     </Container>

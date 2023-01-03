@@ -105,6 +105,7 @@ export default function Home() {
           onChangeValue={onChangeValueHandler}
           showReport={question.showReport}
           showDetails={question.showDetails}
+          answers={answers}
         />)}
         <ButtonContainer>
           <Button onClick={onClickHandler}>Preview</Button>
