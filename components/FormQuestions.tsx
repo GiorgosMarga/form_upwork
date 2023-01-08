@@ -60,9 +60,9 @@ export const FormQuestions = ({title, disabled, index, subtitle, questions,quest
       const value10 = reports[10].sentences[answers[11]?.answer] ?? ""
       const value11 = reports[11].sentences[answers[12]?.answer] ?? ""
       const value12 = reports[12].sentences[answers[13]?.answer] ?? ""
-      return value10 + value11 + value12 + reports[index].sentences[chosenValue]  
+      return value10 + value11 + value12 + reports[index]?.sentences[chosenValue]  
     }
-    return reports[index].sentences[chosenValue]
+    return reports[index]?.sentences[chosenValue]
   }
   return (
     <Container>

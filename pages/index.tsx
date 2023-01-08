@@ -14,10 +14,6 @@ const Main = styled.form`
   padding-right:15px;
 `;
 
-const Container = styled.div`
-  font-family: var(--font-mono);
-`
-
 const Button = styled.button`
   
   background-color: purple;
